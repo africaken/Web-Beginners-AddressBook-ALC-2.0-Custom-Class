@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Address Book</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style/addressbook.css">
+    <script src="jquery/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:20px">
+            <div class="col-sm-12">
+
+                <!-- Navigation tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item fade in">
+                        <a class="nav-link active" data-toggle="tab" href="#newContact">Add new contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#viewContact">View contacts
+                            <span class="counter"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#viewAllContacts">All Contact Details
+                                <span class="counter"></span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <!-- Tab Contents -->
+    <div class="tab-content">
+
+        <!-- Tab 1: Enter Contact Details through a form -->
+        <div id="newContact" class="tab-pane fade in active container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="spaced">Add a new contact</h3>
+                    <p class="lead spaced">The form below is used to obtain information about the user.
+                        <span class="info">Please note that all the form fields are required.</span>
+                    </p>
+
+                    <!-- Alert for a new contact added -->
+                    <div class="alert-feedback"></div>
+
+                    <!-- Form for contact information -->
+                    <form class="form-horizontal" id="contactForm">
+                        <fieldset>
+                            <legend>Contact Information</legend>
+
+                            <!-- Firstname field -->
+                            <div class="form-group row">
+                                <label for="firstname" class="col-sm-2 control-label">Firstname</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-user"></span>
+                                        </span>
+                                        <input type="text" class="form-control" id="firstname" placeholder="Firstname" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Surname field -->
+                            <div class="form-group row">
+                                <label for="surname" class="col-sm-2 control-label">Surname</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-user"></span>
+                                        </span>
+                                        <input type="text" class="form-control" id="surname" placeholder="Surname / Lastname" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Phone Number field -->
+                            <div class="form-group row">
+                                <label for="phoneNumber" class="col-sm-2 control-label">Phone Number</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-phone-alt"></span>
+                                        </span>
+                                        <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Email field -->
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-2 control-label">E-mail</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-envelope"></span>
+                                        </span>
+                                        <input type="email" class="form-control" id="email" placeholder="mail@example.com" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Residential Address field -->
+                            <div class="form-group row">
+                                <label for="houseAddress" class="col-sm-2 control-label">Residential Address</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-home"></span>
+                                        </span>
+                                        <input type="text" class="form-control" id="houseAddress" placeholder="Residential Address / Home Address" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Age field -->
+                            <div class="form-group row">
+                                <label for="age" class="col-sm-2 control-label">Age </label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="age" placeholder="Age: From 1 to 120" min="1" max="120" required>
+                                </div>
+                            </div>
+
+                            <!-- Gender field -->
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label">Gender</label>
+                                <div class="col-sm-2">
+                                    <label for="male">
+                                        <input type="radio" name="gender" id="male" value="male" required /> Male
+                                    </label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="female">
+                                        <input type="radio" name="gender" id="female" value="female" required /> Female
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Sumbit button -->
+                            <div class="form-group">
+                                <div class="col-sm-offset-8 col-sm-2 spacious">
+                                    <button type="submit" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-ok"></span>Add Contact</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: View, Modify and Delete Contacts -->
+        <div id="viewContact" class="tab-pane fade container-fluid">
+            <div class="alert-feedback-remove"></div>
+            <div class="contacts-view spaced"></div>
+        </div>
+
+        <!-- Tab 3: View, Modify and Delete Contacts -->
+        <div id="viewAllContacts" class="tab-pane fade container-fluid">
+            <div class="table-responsive spaced"></div>
+        </div>
+    </div>
+
+    <!-- Trigger the modal with a button -->
+    <button type="button" style="display:none" data-toggle="modal" id="modal_click" data-target="#contact"></button>
+
+    <!-- Modal dialog for feedback -->
+    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModal-label">
+        <div class="modal-dialog modal-df" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModal-label">Contact Information</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert-feedback-update"></div>
+                    <div class="contact-info"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/addressbook.js"></script>
+</body>
+
+</html>

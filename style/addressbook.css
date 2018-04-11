@@ -1,0 +1,70 @@
+li {
+    background-color: whitesmoke;
+}
+h2, .info {
+    color: blue !important;
+}
+.spaced {
+    margin: 1em;
+}
+.spacious {
+    margin-top: 1em !important;
+}
+.center {
+    text-align: center;
+}
+/* style for form */
+form {
+    padding: 0.5em;
+    margin: 1em;
+    font-size: 1em;
+}
+fieldset {
+    border: 1px forestgreen solid;
+    padding: 1em;
+}
+label {
+    text-align: right;
+}
+input:focus {
+    border: 2px red solid !important;
+    background: #f2f2f2 !important;
+}
+/* style for table */
+table {
+    width: 75%;
+    margin: 1em auto;
+    font-size: 1em;
+}
+
+th, td {
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+
+table, th, tr, td {
+    border: 2px #1c2b0f groove;
+    border-collapse: collapse;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 24px;
+    padding: 5px;
+    color: #1BA6B2;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+th {
+    background: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+tr:hover {
+    background: #F3F5BB;
+}
